@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vince | Creative Developer</title>
+    <link rel="icon" type="image/png" href="resources/V logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .view {
+            display: none;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        ul li a button.active {
+            color: #2563eb;
+            background: #eff6ff;
+            border-radius: 9999px;
+        }
+
+        ul li a button:hover {
+            color: #2563eb;
+            background: #eff6ff;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fildefl-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <header class="fixed top-0 w-full z-50 glass">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="showView('home-view')">
+                <div
+                    class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200">
+                    V
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">
+                    Vince<span class="text-blue-600">.dev</span></span>
+            </div>
+
+            <ul
+                class="flex items-center space-x-1 md:space-x-4 bg-slate-100/50 p-1 rounded-full border border-slate-200">
+                <li>
+                    <a href="index.html">
+                        <button class="nav-link px-4 py-2 text-sm font-semibold transition-all" id="nav-about">
+                            Home
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        <button class="nav-link px-4 py-2 text-sm font-semibold transition-all" id="nav-about">
+                            About
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html">
+                        <button class="active nav-link px-4 py-2 text-sm font-semibold transition-all"
+                            id="nav-projects">
+                            Projects
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <button class="nav-link px-4 py-2 text-sm font-semibold transition-all" id="nav-contact">
+                            Contact
+                        </button>
+                    </a>
+                </li>
+            </ul>
+
+            <button onclick="showView('contact-view')"
+                class="hidden md:block bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-blue-600 transition-all text-sm font-bold shadow-xl shadow-slate-200">
+                Hire Me
+            </button>
+        </nav>
+    </header>
+
+    <section id="projects-view" class="view active container mx-auto pt-36 px-6 pb-16">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold mb-4">
+                Selected Works
+            </h2>
+            <p class="text-slate-500">A collection of projects that define my journey.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">
+                <div class="h-56 bg-slate-200 overflow-hidden">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-blue-400 to-indigo-600 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center text-white font-bold text-2xl">
+                        E-Commerce UI
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            React
+                        </span>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            Tailwind
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">
+                        Modern Shop Interface
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-6">A fully responsive shopping experience with filtering and
+                        sleek animations.</p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm">View Details
+                        <i data-lucide="external-link" class="ml-1 w-4 h-4">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">
+                <div class="h-56 bg-slate-200 overflow-hidden">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-purple-400 to-pink-600 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center text-white font-bold text-2xl">
+                        Dashboard Pro
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            JavaScript
+                        </span>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            Charts.js
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">
+                        SaaS Analytics Panel
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-6">
+                        Complex data visualization for business metrics with dark
+                        mode support.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm">View Details
+                        <i data-lucide="external-link" class="ml-1 w-4 h-4">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all">
+                <div class="h-56 bg-slate-200 overflow-hidden">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-emerald-400 to-teal-600 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center text-white font-bold text-2xl">
+                        Travel App
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            Vue.js
+                        </span>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-100 rounded-md uppercase">
+                            API
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">
+                        Adventure Planner
+                    </h3>
+                    <p class="text-slate-500 text-sm mb-6">
+                        Helping users discover hidden gems and plan itineraries
+                        globally.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm">
+                        View Details
+                        <i data-lucide="external-link" class="ml-1 w-4 h-4">
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+
+            <div class="flex flex-col items-center md:items-start gap-3">
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-100">
+                        V
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">Vince<span class="text-blue-600">.dev
+                        </span>
+                    </span>
+                </div>
+                <p class="text-slate-400 text-sm">© 2026 Vince Portfolio. Built with Tailwind CSS.</p>
+            </div>
+
+            <div class="flex items-center space-x-4">
+
+                <a href="https://github.com" target="_blank" class="group w-12 h-12 flex items-center justify-center 
+                    bg-slate-50 rounded-2xl border border-slate-100
+                    hover:bg-gray-900 hover:border-gray-900
+                    hover:scale-110 hover:-translate-y-1
+                    transition-all duration-300 shadow-sm hover:shadow-lg">
+                    <i
+                        class="fa-brands fa-github text-slate-500 group-hover:text-white text-lg transition-colors duration-300"></i>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="group w-12 h-12 flex items-center justify-center 
+              bg-slate-50 rounded-2xl border border-slate-100
+              hover:bg-blue-600 hover:border-blue-600
+              hover:scale-110 hover:-translate-y-1
+              transition-all duration-300 shadow-sm hover:shadow-lg">
+                    <i
+                        class="fa-brands fa-facebook-f text-slate-500 group-hover:text-white text-lg transition-colors duration-300"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="group w-12 h-12 flex items-center justify-center 
+              bg-slate-50 rounded-2xl border border-slate-100
+              hover:bg-pink-500 hover:border-pink-500
+              hover:scale-110 hover:-translate-y-1
+              transition-all duration-300 shadow-sm hover:shadow-lg">
+                    <i
+                        class="fa-brands fa-instagram text-slate-500 group-hover:text-white text-lg transition-colors duration-300"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function showView(viewId) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(viewId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            const activeNav = document.getElementById('nav-' + viewId.replace('-view', ''));
+            if (activeNav) activeNav.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        const contactForm = document.getElementById('contact-form');
+        const logList = document.getElementById('log-list');
+        const noData = document.getElementById('no-data');
+
+        window.onload = renderLogs;
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const entry = {
+                name: document.getElementById('name').value,
+                message: document.getElementById('message').value,
+                time: new Date().toLocaleTimeString()
+            };
+
+            const logs = JSON.parse(localStorage.getItem('vince_portfolio_logs')) || [];
+            logs.unshift(entry);
+            localStorage.setItem('vince_portfolio_logs', JSON.stringify(logs));
+            this.reset();
+            renderLogs();
+        });
+
+        function renderLogs() {
+            const logs = JSON.parse(localStorage.getItem('vince_portfolio_logs')) || [];
+
+            if (logs.length === 0) {
+                noData.style.display = 'block';
+                logList.innerHTML = '';
+                return;
+            }
+            noData.style.display = 'none';
+            logList.innerHTML = logs.map(item => `
+                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 animate-fadeIn">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-blue-400 font-bold text-xs uppercase tracking-widest">${item.name}</span>
+                        <span class="text-slate-600 text-[10px]">${item.time}</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed text-xs">"${item.message}"</p>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
